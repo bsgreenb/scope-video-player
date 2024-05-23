@@ -11,7 +11,7 @@ type VideoProps = {
 const Video = ({id, title, author, description, createdAt}: VideoProps) => {
     return (
         <div className="bg-white">
-            <div className="relative">
+            <div className="relative mb-2">
                 <div className="aspect-w-16 aspect-h-9">
                     <video controls className="rounded-lg">
                         <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />

@@ -1,4 +1,4 @@
-// CONTINYA: provide props and placeholder data
+import { formatDistanceToNow } from "date-fns";
 
 export type CommentProps = {
     id: string;
@@ -7,14 +7,14 @@ export type CommentProps = {
     createdAt: string;
 }
 
-const Comment = () => {
+const Comment = ({id, content, author, createdAt}: CommentProps) => {
     return (
         <div className="mb-4">
             <div className="text-sm text-gray-900 mb-1">
-                <span className="font-semibold ">even_arnold </span>
-                • 2d ago
+                <span className="font-semibold ">{author} </span>
+                • {formatDistanceToNow(new Date(createdAt))} ago
             </div>
-            <div className="bg-gray-100 p-3 rounded-lg text-sm text-gray-700 inline-block">Super easy to follow! Love the breakdown at the end. Thanks! Super easy to follow! Love the breakdown at the end. Thanks!</div>
+            <div className="bg-gray-100 p-3 rounded-lg text-sm text-gray-700 inline-block">{content}</div>
         </div>
     );
 }
