@@ -1,7 +1,10 @@
-import { videos } from "../lib/placeholder-data";
-import VideoCard from "./VideoCard";
+import VideoCard, { VideoCardProps } from "./VideoCard";
 
-const VideoGrid = () => {
+export type VideoGridProps = {
+    videos: VideoCardProps[];
+}
+
+const VideoGrid = ({videos}: VideoGridProps) => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {videos.map((video) => (
@@ -10,7 +13,6 @@ const VideoGrid = () => {
                     id={video.id}
                     title={video.title}
                     author={video.author}
-                    thumbnailUrl={video.thumbnailUrl}
                     lengthSeconds={video.lengthSeconds}
                     createdAt={video.createdAt}
                     numComments={video.numComments}

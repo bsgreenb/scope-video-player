@@ -1,6 +1,7 @@
 import { formatDate } from "../lib/datetime";
+import { getVideoThumbnailUrl, getVideoUrl } from "../lib/s3_resource";
 
-type VideoProps = {
+export type VideoProps = {
     id: string;
     title: string;
     author: string;
@@ -13,8 +14,12 @@ const Video = ({id, title, author, description, createdAt}: VideoProps) => {
         <div className="bg-white">
             <div className="relative mb-2">
                 <div className="aspect-w-16 aspect-h-9">
-                    <video controls className="rounded-lg">
-                        <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                    <video 
+                        controls 
+                        className="rounded-lg"
+                        poster={getVideoThumbnailUrl(id)}
+                    >
+                        <source src={getVideoUrl(id)} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

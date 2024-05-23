@@ -2,25 +2,25 @@ import Image from 'next/image';
 import { formatDistanceToNow } from 'date-fns';
 import { formatLength } from '../lib/datetime';
 import Link from 'next/link';
+import { getVideoThumbnailUrl } from '../lib/s3_resource';
 
-type VideoCardProps = {
+export type VideoCardProps = {
     id: string;
     title: string;
     author: string;
-    thumbnailUrl: string;
     lengthSeconds: number;
     createdAt: string;
     numComments: number;
 }
 
-const VideoCard = ({id, title, author, thumbnailUrl, lengthSeconds, createdAt, numComments}: VideoCardProps) => {
+const VideoCard = ({id, title, author, lengthSeconds, createdAt, numComments}: VideoCardProps) => {
     return (
         <div className="bg-white">
             <div className="relative">
                 <div className="aspect-w-16 aspect-h-9">
                     <Link href={`/videos/${id}`}>
                         <Image
-                            src={thumbnailUrl}
+                            src={getVideoThumbnailUrl(id)}
                             alt={title}
                             layout="fill"
                             objectFit="cover"

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['placehold.co'],
+        domains: ['scope-videos.s3.amazonaws.com'],
     }
 };
   
