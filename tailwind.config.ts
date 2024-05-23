@@ -6,6 +6,8 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio')
+  ],
 };
 export default config;
