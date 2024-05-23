@@ -34,7 +34,7 @@ const VideoCard = ({id, title, author, thumbnailUrl, lengthSeconds, createdAt, n
                     {formatLength(lengthSeconds)}
                 </span>
             </div>
-            <div className="py-4">
+            <div className="py-2">
                 <h3 className="font-bold text-lg">
                     <Link href={`/videos/${id}`}>
                         {title}
