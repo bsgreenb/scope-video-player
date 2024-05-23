@@ -13,8 +13,6 @@ type VideoCardProps = {
     numComments: number;
 }
 
-// TODO: make sure height changes properly
-
 const VideoCard = ({id, title, author, thumbnailUrl, lengthSeconds, createdAt, numComments}: VideoCardProps) => {
     return (
         <div className="bg-white">

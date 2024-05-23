@@ -4,10 +4,11 @@ type VideoProps = {
     id: string;
     title: string;
     author: string;
+    description: string;
     createdAt: string;
 }
 
-const Video = ({id, title, author, createdAt}: VideoProps) => {
+const Video = ({id, title, author, description, createdAt}: VideoProps) => {
     return (
         <div className="bg-white">
             <div className="relative">
@@ -19,13 +20,14 @@ const Video = ({id, title, author, createdAt}: VideoProps) => {
                 </div>
             </div>
             <div className="py-2">
-                <h2 className="font-bold text-2xl">
+                <h2 className="font-bold text-2xl mb-1">
                     {title}
                 </h2>
-                <div className="text-gray-600 text-sm">
-                    <p className="mt-1">
-                        {author} • Uploaded {formatDate(createdAt)}
-                    </p>
+                <div className="text-gray-600 text-sm mb-2">
+                    {author} • Uploaded {formatDate(createdAt)}
+                </div>
+                <div> 
+                    {description}
                 </div>
             </div>
         </div>
