@@ -1,29 +1,30 @@
+import { formatDate } from "../lib/datetime";
 
 type VideoProps = {
     id: string;
     title: string;
     author: string;
-    thumbnailUrl: string;
     createdAt: string;
 }
 
-const Video = ({id, title, author, thumbnailUrl, createdAt}: VideoProps) => {
+const Video = ({id, title, author, createdAt}: VideoProps) => {
     return (
         <div className="bg-white">
             <div className="relative">
                 <div className="aspect-w-16 aspect-h-9">
                     <video controls className="rounded-lg">
-                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                        <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
             <div className="py-2">
-                <h3 className="font-bold text-lg">
+                <h2 className="font-bold text-2xl">
                     {title}
-                </h3>
+                </h2>
                 <div className="text-gray-600 text-sm">
                     <p className="mt-1">
-                        {author} • Uploaded {createdAt}
+                        {author} • Uploaded {formatDate(createdAt)}
                     </p>
                 </div>
             </div>

@@ -39,17 +39,15 @@ export const videos = [
 
 export const comments = [
     {
-        "created_at": "2024-05-22T20:12:45.048993+00:00",
-        "content": "here's a comment",
-        "user_id": "some_guy",
-        "video_id": "ucanNedqYRUJ8CgmtJM4",
-        "id": "Gotct0gALRP9o6QrEkPK"
+        id: "Gotct0gALRP9o6QrEkPK",
+        createdAt: "2024-05-22T20:12:45.048993+00:00",
+        content: "here's a comment",
+        author: "some_guy"
     },
     {
-        "created_at": "2024-05-21T20:12:45.048993+00:00",
-        "content": "someone else has a comment like this.  it's much longer and this is to test the UI.",
-        "user_id": "bill_gates",
-        "video_id": "ucanNedqYRUJ8CgmtJM4",
-        "id": "Hotct0gALRP9o6QrEkPK"
+        id: "Hotct0gALRP9o6QrEkPK",
+        createdAt: "2024-05-21T20:12:45.048993+00:00",
+        content: "someone else has a comment like this.  it's much longer and this is to test the UI.",
+        author: "bill_gates"
     }
 ];

@@ -1,12 +1,15 @@
 import { videos, comments } from "../../lib/placeholder-data";
 import Video from "../../ui/Video";
+import VideoComments from "../../ui/VideoComments";
 
 const VideoPage = () => {
     const video = videos[0];
-    return (
-        <div className="max-w-4xl mx-auto">
+    return (  
+        <>
             <Video {...video} />
-        </div>
+            <hr className="mt-2 mb-4" />
+            <VideoComments comments={comments} />
+        </>
     );
 }
 
