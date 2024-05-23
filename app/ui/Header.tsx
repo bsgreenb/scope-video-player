@@ -1,27 +1,15 @@
 import Image from "next/image";
 import Button from "./Button";
-import Link from 'next/link';
 
-type HeaderProps = {
-    isLoggedIn: boolean;
-}  
-
-const Header = ({isLoggedIn}: HeaderProps) => {
+const Header = () => {
     return (
-        <header className="w-full p-4">
+        <header className="w-full py-4 mb-2">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex-1 flex justify-center">
-                    <Image src="/logo.png" alt="LearnWell Logo" width={150} height={75} />
+                    <Image src="/logo.png" alt="LearnWell Logo" width={175} height={87} />
                 </div>
                 <div className="flex items-center space-x-4">
-                    {isLoggedIn ? (
-                        <>
-                            <Button>Upload</Button>
-                            <Link href="/logout">Logout</Link>
-                        </>
-                    ) : (
-                        <Link href="/login">Login</Link>
-                    )}
+                    <Button>Upload</Button>
                 </div>
             </div>
         </header>
