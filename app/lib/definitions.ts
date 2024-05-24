@@ -3,7 +3,6 @@ export type VideoProps = {
     title: string;
     author: string;
     description: string;
-    lengthSeconds: number;
     createdAt: string;
     numComments: number;
 }

@@ -12,13 +12,11 @@ type VideoResponseProps = {
     video_url: string;
 };
 
-// TODO: Remove the placeholder for lengthSeconds if Cory adds it.
 const transformVideo = (video: VideoResponseProps) => ({
    id: video.id,
    title: video.title,
    author: video.user_id,
    description: video.description,
-   lengthSeconds: 320, 
    createdAt: video.created_at,
    numComments: video.num_comments
 });

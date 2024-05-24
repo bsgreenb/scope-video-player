@@ -13,7 +13,6 @@ const VideoGrid = ({videos}: VideoGridProps) => {
                     id={video.id}
                     title={video.title}
                     author={video.author}
-                    lengthSeconds={video.lengthSeconds}
                     createdAt={video.createdAt}
                     numComments={video.numComments}
                 />
