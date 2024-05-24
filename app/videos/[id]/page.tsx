@@ -10,7 +10,7 @@ export default async function VideoPage({params}: {params: {id: string}})  {
         <>
             <Video {...video} />
             <hr className="mt-2 mb-4" />
-            <VideoComments comments={comments} />
+            <VideoComments videoId={params.id} comments={comments} />
         </>
     );
 }

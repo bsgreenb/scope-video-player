@@ -54,3 +54,17 @@ export async function getComments(videoId: string): Promise<CommentProps[]> {
     const responseJson = await response.json();
     return responseJson.comments.map(transformComment);
 }
+
+export async function createComment(videoId: string, content: string, author: string) {
+    await fetch(`${API_BASE_URL}videos/comments`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            video_id: videoId,
+            content: content,
+            user_id: author,
+        })
+    });
+}
