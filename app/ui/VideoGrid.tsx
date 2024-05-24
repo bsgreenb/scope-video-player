@@ -1,6 +1,6 @@
 import VideoCard, { VideoCardProps } from "./VideoCard";
 
-export type VideoGridProps = {
+type VideoGridProps = {
     videos: VideoCardProps[];
 }
 

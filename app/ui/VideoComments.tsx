@@ -1,5 +1,6 @@
 import CommentForm from "./CommentForm";
-import Comment, { CommentProps } from "./Comment";
+import Comment from "./Comment";
+import { CommentProps } from "../lib/definitions";
 
 type VideoCommentsProps = {comments: CommentProps[]};
 

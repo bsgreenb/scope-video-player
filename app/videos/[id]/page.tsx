@@ -1,11 +1,10 @@
-import { videos, comments } from "../../lib/placeholder-data";
-import { CommentProps } from "../../ui/Comment";
-import Video, { VideoProps } from "../../ui/Video";
+import { getComments, getVideo, getVideos } from "../../lib/api";
+import Video from "../../ui/Video";
 import VideoComments from "../../ui/VideoComments";
 
-const VideoPage = ({params}: {params: {id: string}}) => {
-    // TODO: use api request instead of placeholder data here.  both for videos and comments.
-    const video = videos.find(video => video.id === params.id) as VideoProps;
+export default async function VideoPage({params}: {params: {id: string}})  {
+    const video = await getVideo(params.id);
+    const comments = await getComments(params.id);
 
     return (  
         <>
@@ -17,11 +16,10 @@ const VideoPage = ({params}: {params: {id: string}}) => {
 }
 
 export async function getStaticPaths() {
+    const videos = await getVideos();
     const paths = videos.map(video => ({
       params: { id: video.id }
     }));
   
     return { paths, fallback: true };
 }
-
-export default VideoPage;

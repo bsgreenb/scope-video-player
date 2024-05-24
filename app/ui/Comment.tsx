@@ -1,13 +1,7 @@
 import { formatDistanceToNow } from "date-fns";
+import { CommentProps } from "../lib/definitions";
 
-export type CommentProps = {
-    id: string;
-    content: string;
-    author: string;
-    createdAt: string;
-}
-
-const Comment = ({id, content, author, createdAt}: CommentProps) => {
+const Comment = ({content, author, createdAt}: Pick<CommentProps, "content" | "author" | "createdAt">) => {
     return (
         <div className="mb-4">
             <div className="text-sm text-gray-900 mb-1">

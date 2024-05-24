@@ -3,15 +3,9 @@ import { formatDistanceToNow } from 'date-fns';
 import { formatLength } from '../lib/datetime';
 import Link from 'next/link';
 import { getVideoThumbnailUrl } from '../lib/s3_resource';
+import { VideoProps } from '../lib/definitions';
 
-export type VideoCardProps = {
-    id: string;
-    title: string;
-    author: string;
-    lengthSeconds: number;
-    createdAt: string;
-    numComments: number;
-}
+export type VideoCardProps = Pick<VideoProps, "id" | "title" | "author" | "lengthSeconds" | "createdAt" | "numComments">;
 
 const VideoCard = ({id, title, author, lengthSeconds, createdAt, numComments}: VideoCardProps) => {
     return (

@@ -1,15 +1,8 @@
 import { formatDate } from "../lib/datetime";
+import { VideoProps } from "../lib/definitions";
 import { getVideoThumbnailUrl, getVideoUrl } from "../lib/s3_resource";
 
-export type VideoProps = {
-    id: string;
-    title: string;
-    author: string;
-    description: string;
-    createdAt: string;
-}
-
-const Video = ({id, title, author, description, createdAt}: VideoProps) => {
+const Video = ({id, title, author, description, createdAt}: Pick<VideoProps, "id" | "title" | "author" | "description" | "createdAt">) => {
     return (
         <div className="bg-white">
             <div className="relative mb-2">

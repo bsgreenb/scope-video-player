@@ -1,10 +1,9 @@
-import { videos } from "./lib/placeholder-data";
-import VideoGrid, { VideoGridProps } from "./ui/VideoGrid";
+import { getVideos } from "./lib/api";
+import VideoGrid from "./ui/VideoGrid";
 
 
-export default function Home() {
-  // TODO: fetch videos here.  this is server side and will just run once.
-
+export default async function Home() {
+  const videos = await getVideos();
   return (
     <VideoGrid videos={videos} />  
   );
