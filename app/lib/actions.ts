@@ -4,7 +4,7 @@
 import { createComment } from "./api";
 import { revalidatePath } from 'next/cache'
 
-export async function submitComment(prevState: {error?: string}, formData: FormData) {
+export async function submitComment(prevState: {error?: string}, formData: FormData): Promise<{error?: string}> {
     
     const videoId = formData.get("videoId") as string;
     const content = formData.get("content") as string;
