@@ -15,11 +15,9 @@ export default async function VideoPage({params}: {params: {id: string}})  {
     );
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
     const videos = await getVideos();
-    const paths = videos.map(video => ({
-      params: { id: video.id }
-    }));
-  
-    return { paths, fallback: true };
+    return videos.map(video => (
+      { id: video.id }
+    ));
 }
