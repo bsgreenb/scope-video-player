@@ -22,14 +22,15 @@ const CommentForm = ({videoId, onSubmit, error}: CommentFormProps) => {
         <form action={handleSubmit} className="mb-4">
             <div className="flex items-center">
                 <input type="hidden" name="videoId" value={videoId} />
-                <input
+                <textarea
                     required
+                    maxLength={1000}
                     name="content"
+                    rows={2}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    type="text"
                     placeholder="Add your comment..."
-                    className="flex-grow border border-gray-300 rounded-full py-2 px-4 mr-2"
+                    className="flex-grow border border-gray-300 rounded-md py-2 px-4 mr-2"
                 />
                 <Button type="submit">Comment</Button>
             </div>

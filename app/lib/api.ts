@@ -56,7 +56,7 @@ export async function getComments(videoId: string): Promise<CommentProps[]> {
 }
 
 export async function createComment(videoId: string, content: string, author: string) {
-    await fetch(`${API_BASE_URL}videos/comments`, {
+    const response = await fetch(`${API_BASE_URL}videos/comments`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -67,4 +67,7 @@ export async function createComment(videoId: string, content: string, author: st
             user_id: author,
         })
     });
+    if (!response.ok) {
+        throw new Error(`Failed to create comment with videoId=${videoId}, content=${content}, author=${author}: ${response.statusText}`);
+    }
 }

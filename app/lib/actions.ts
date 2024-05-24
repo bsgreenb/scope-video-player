@@ -10,17 +10,19 @@ export async function submitComment(prevState: {error?: string}, formData: FormD
     const content = formData.get("content") as string;
     const author = 'ben_greenberg';
     
-    // TODO: validate inputs
-
-    // TODO: remove this testing thing
-    if (content === "err_test") {
-        return {error: "Something went wrong"};
+    if (content.trim() == '') {
+        return {error: "Your comment was empty"};
+    }
+    if (content.length > 1000) {
+        return {error: "Your comment was too long"};
     }
 
-    // TODO: wrap api call in try_catch, errs on their side are just 500s
-    await createComment(videoId, content, author);
-
-    revalidatePath(`/videos/${videoId}`);
-
-    return {};
+    return createComment(videoId, content, author)
+        .then(() => {
+            revalidatePath(`/videos/${videoId}`);
+            return {};
+        })
+        .catch(() => {
+          return {error: "There was an error submitting your comment.  Please try again later."};  
+        });
 }
