@@ -33,7 +33,7 @@ const VideoCard = ({video: {id, title, videoUrl, author, createdAt, numComments}
                         {author} • {formatDistanceToNow(new Date(createdAt))} ago
                     </p>
                     <p className="mt-2">
-                        <span className="inline-block mr-1">💬</span>{numComments} comment{numComments != 1 && 's'}
+                        {numComments > 0 && <><span className="inline-block mr-1">💬</span>{numComments} comment{numComments > 1 && 's'}</>}
                     </p>
                 </div>
             </div>
