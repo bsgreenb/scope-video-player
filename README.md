@@ -23,5 +23,6 @@ The API is publicly accessible on [FastApi](https://take-home-assessment-423502.
 ![image](https://github.com/bsgreenb/scope-video-player/assets/980217/9bf6ecc1-b009-448a-88fe-9a75b2afc07b)
 
 **Upload Video Form**
+
 ![image](https://github.com/bsgreenb/scope-video-player/assets/980217/5b25b961-690c-4bbe-a372-614e182b9579)
 
