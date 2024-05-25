@@ -2,7 +2,7 @@
 'use server';
 
 import { createComment, createVideo } from "./api";
-import { revalidatePath } from 'next/cache'
+import { revalidatePath } from 'next/cache';
 import { isValidMp4Url } from "./validation";
 
 type SubmitVideoState = {error?: string; success?: boolean; title?: string;};

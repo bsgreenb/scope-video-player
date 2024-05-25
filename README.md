@@ -2,7 +2,9 @@ This is a Next.js project, hosted on Vercel.
 
 ## Solution Overview
 
-We build the entire website statically, pulling videos and comments from FastAPI.  For the dynamic parts of the site, like creating videos and comments, we simply use `revalidatePath` to trigger an incremental rebuild of the appropriate pages after the data is mutated.
+We build the entire website statically, pulling videos and comments from FastAPI.  
+
+For dynamic parts of the site, like creating videos and comments, we use server actions for ajax endpoints to our forms.  To update the static site, we simply use `revalidatePath` to trigger an incremental rebuild of the appropriate pages after the data is mutated in those actions.
 
 For displaying the videos, we get all the features we need from the HTML5 `<video>` tag. 
 
@@ -14,7 +16,7 @@ To deploy the app, just merge your code into `master`.  Ask Ben if you need acce
 
 The API is publicly accessible on [FastApi](https://take-home-assessment-423502.uc.r.appspot.com/docs).
 
-You can run the tests (written in Jest) with `yarn test`.
+You can run the Jest tests (found in `/__tests__/`) with `yarn test`.
 
 ## Screenshots
 
