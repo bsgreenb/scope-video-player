@@ -26,7 +26,7 @@ describe('submitVideo', () => {
         return formData;
     };
 
-    it('should return error if title or videoUrl is missing', async () => {
+    test('should return error if title or videoUrl is missing', async () => {
         const formData = createFormData('', 'A description', 'http://example.com/video.mp4');
         const result = await submitVideo({}, formData);
         expect(result).toEqual({error: "Please fill in all fields"});
@@ -77,7 +77,7 @@ describe('submitComment', () => {
         return formData;
     };
 
-    it('should return error if content is missing', async () => {
+    test('should return error if content is missing', async () => {
         const formData = createFormData('123', '');
         const result = await submitComment({}, formData);
         expect(result).toEqual({error: "Your comment was empty"});
