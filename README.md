@@ -6,13 +6,15 @@ We build the entire website statically, pulling videos and comments from FastAPI
 
 For displaying the videos, we get all the features we need from the HTML5 `<video>` tag. 
 
-## Developer Setup
+## Developer Setup and Testing
 
 Run `yarn install` and then you can use the dev server via `yarn dev`.  If you run `yarn build` you can create a production build.
 
 To deploy the app, just merge your code into `master`.  Ask Ben if you need access to Vercel.
 
 The API is publicly accessible on [FastApi](https://take-home-assessment-423502.uc.r.appspot.com/docs).
+
+You can run the tests (written in Jest) with `yarn test`.
 
 ## Screenshots
 
@@ -27,4 +29,6 @@ The API is publicly accessible on [FastApi](https://take-home-assessment-423502.
 **Upload Video Form**
 
 ![image](https://github.com/bsgreenb/scope-video-player/assets/980217/5b25b961-690c-4bbe-a372-614e182b9579)
+
+
 
