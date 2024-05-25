@@ -14,5 +14,14 @@ To deploy the app, just merge your code into `master`.  Ask Ben if you need acce
 
 The API is publicly accessible on [FastApi](https://take-home-assessment-423502.uc.r.appspot.com/docs).
 
+## Screenshots
 
+**Videos Listing Page**
+![image](https://github.com/bsgreenb/scope-video-player/assets/980217/93de3aba-6add-48bf-9242-9b0575777fd2)
+
+**Video Page**
+![image](https://github.com/bsgreenb/scope-video-player/assets/980217/9bf6ecc1-b009-448a-88fe-9a75b2afc07b)
+
+**Upload Video Form**
+![image](https://github.com/bsgreenb/scope-video-player/assets/980217/5b25b961-690c-4bbe-a372-614e182b9579)
 
