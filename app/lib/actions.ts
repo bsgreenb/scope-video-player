@@ -28,7 +28,6 @@ export async function submitVideo(_prevState: SubmitVideoState, formData: FormDa
     
     return createVideo(title, description, videoUrl, author)
         .then(() => {
-            // TODO: make sure we're good with just this
             revalidatePath('/');
             return {success: true, title};
         })
