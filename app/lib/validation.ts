@@ -6,5 +6,5 @@ export function isValidMp4Url(text: string) {
     } catch (_) {
         return false;  
     }
-    return url.protocol === "http:" || url.protocol === "https:" && url.pathname.endsWith('.mp4');
+    return (url.protocol === "http:" || url.protocol === "https:") && url.pathname.endsWith('.mp4');
 }

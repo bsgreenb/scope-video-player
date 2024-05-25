@@ -37,7 +37,7 @@ const transformComment = (comment: CommentResponseProps) => ({
 });
 
 export async function getVideos() : Promise<VideoProps[]> {
-    const user_id = 'nutty_professor';
+    const user_id = 'mr_doctor';
     const response = await fetch(`${API_BASE_URL}videos?user_id=${user_id}`);
     const responseJson = await response.json();
 

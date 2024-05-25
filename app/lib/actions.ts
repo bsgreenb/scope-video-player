@@ -5,13 +5,14 @@ import { createComment, createVideo } from "./api";
 import { revalidatePath } from 'next/cache'
 import { isValidMp4Url } from "./validation";
 
-export async function submitVideo(_prevState: {error?: string}, formData: FormData): Promise<{error?: string}> {
+type SubmitVideoState = {error?: string; success?: boolean; title?: string;};
+export async function submitVideo(_prevState: SubmitVideoState, formData: FormData): Promise<SubmitVideoState> {
     const title = formData.get("title") as string;
     const description = formData.get("description") as string;
     const videoUrl = formData.get("videoUrl") as string;
-    const author = 'nutty_professor';
+    const author = 'mr_doctor';
     
-    if (title.trim() == '' || description.trim() == '' || videoUrl.trim() == '') {
+    if (title.trim() == '' || videoUrl.trim() == '') {
         return {error: "Please fill in all fields"};
     }
     if (title.length > 100) {
@@ -29,7 +30,7 @@ export async function submitVideo(_prevState: {error?: string}, formData: FormDa
         .then(() => {
             // TODO: make sure we're good with just this
             revalidatePath('/');
-            return {};
+            return {success: true, title};
         })
         .catch(() => {
           return {error: "There was an error submitting your video.  Please try again later."};  
@@ -39,7 +40,7 @@ export async function submitVideo(_prevState: {error?: string}, formData: FormDa
 export async function submitComment(_prevState: {error?: string}, formData: FormData): Promise<{error?: string}> {
     const videoId = formData.get("videoId") as string;
     const content = formData.get("content") as string;
-    const author = 'nutty_professor';
+    const author = 'mr_doctor';
     
     if (content.trim() == '') {
         return {error: "Your comment was empty"};

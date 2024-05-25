@@ -1,5 +1,6 @@
 import { formatDate } from "../lib/datetime";
 import { VideoProps } from "../lib/definitions";
+import { getThumbnailUrl } from "../lib/thumbs";
 
 const Video = ({id, title, videoUrl, author, description, createdAt}: Pick<VideoProps, "id" | "title" | "videoUrl" | "author" | "description" | "createdAt">) => {
     return (
@@ -9,6 +10,7 @@ const Video = ({id, title, videoUrl, author, description, createdAt}: Pick<Video
                     <video 
                         controls 
                         className="rounded-lg"
+                        poster={getThumbnailUrl(videoUrl)}
                     >
                         <source src={videoUrl} type="video/mp4" />
                         Your browser does not support the video tag.

@@ -37,7 +37,7 @@ const CommentForm = ({videoId}: CommentFormProps) => {
                 />
                 <Button type="submit">Comment</Button>
             </div>
-            {error && <div className="text-red-600">{error}</div>}
+            {error && <div className="text-red-600 mt-2">{error}</div>}
         </form>
     );
 }

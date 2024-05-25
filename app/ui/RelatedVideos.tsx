@@ -4,9 +4,9 @@ type VideoGridProps = {
     videos: VideoCardProps['video'][];
 }
 
-const VideoGrid = ({videos}: VideoGridProps) => {
+const RelatedVideos = ({videos}: VideoGridProps) => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4">
             {videos.map((video) => (
                 <VideoCard
                     key={video.id}
@@ -17,4 +17,4 @@ const VideoGrid = ({videos}: VideoGridProps) => {
     );
 }
 
-export default VideoGrid;
+export default RelatedVideos;
