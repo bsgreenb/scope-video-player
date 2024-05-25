@@ -18,14 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} px-4 sm:px-6 lg:px-8`}>
-        <>
-          <Header />
-          <main>
-            <div className="container mx-auto">
-              {children}
-            </div>
-          </main>
-        </>
+        <Header />
+        <main>
+          <div className="container mx-auto">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

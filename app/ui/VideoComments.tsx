@@ -4,8 +4,6 @@ import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 import { CommentProps, VideoProps } from "../lib/definitions";
 import React from "react";
-import { useFormState } from "react-dom";
-import { submitComment } from "../lib/actions";
 
 type VideoCommentsProps = {
     videoId: VideoProps['id'];
