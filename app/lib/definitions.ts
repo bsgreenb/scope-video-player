@@ -1,6 +1,7 @@
 export type VideoProps = {
     id: string;
     title: string;
+    videoUrl: string;
     author: string;
     description: string;
     createdAt: string;

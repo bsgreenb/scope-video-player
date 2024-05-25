@@ -1,8 +1,7 @@
 import { formatDate } from "../lib/datetime";
 import { VideoProps } from "../lib/definitions";
-import { getVideoThumbnailUrl, getVideoUrl } from "../lib/s3_resource";
 
-const Video = ({id, title, author, description, createdAt}: Pick<VideoProps, "id" | "title" | "author" | "description" | "createdAt">) => {
+const Video = ({id, title, videoUrl, author, description, createdAt}: Pick<VideoProps, "id" | "title" | "videoUrl" | "author" | "description" | "createdAt">) => {
     return (
         <div className="bg-white">
             <div className="relative mb-2">
@@ -10,9 +9,8 @@ const Video = ({id, title, author, description, createdAt}: Pick<VideoProps, "id
                     <video 
                         controls 
                         className="rounded-lg"
-                        poster={getVideoThumbnailUrl(id)}
                     >
-                        <source src={getVideoUrl(id)} type="video/mp4" />
+                        <source src={videoUrl} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

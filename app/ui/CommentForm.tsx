@@ -3,18 +3,21 @@
 import { useState } from "react";
 import { VideoProps } from "../lib/definitions";
 import Button from "./Button";
+import { useFormState } from "react-dom";
+import { submitComment } from "../lib/actions";
 
 type CommentFormProps = {
     videoId: VideoProps['id'];
-    onSubmit: (payload: FormData) => void;
-    error?: string;
 }
 
-const CommentForm = ({videoId, onSubmit, error}: CommentFormProps) => {
+const CommentForm = ({videoId}: CommentFormProps) => {
     const [content, setContent] = useState('');
 
+    // Note: NextJS vendors React so we have to use the version with useFormState instead of useActionState https://github.com/facebook/react/issues/29017
+    const [{error}, handleSubmitComment] = useFormState(submitComment, {});
+
     const handleSubmit = (event: FormData) => {
-        onSubmit(event);
+        handleSubmitComment(event);
         setContent(''); // Clear the input field on submit.
     };
 

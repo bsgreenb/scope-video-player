@@ -15,6 +15,7 @@ type VideoResponseProps = {
 const transformVideo = (video: VideoResponseProps) => ({
    id: video.id,
    title: video.title,
+   videoUrl: video.video_url,
    author: video.user_id,
    description: video.description,
    createdAt: video.created_at,
@@ -36,7 +37,7 @@ const transformComment = (comment: CommentResponseProps) => ({
 });
 
 export async function getVideos() : Promise<VideoProps[]> {
-    const user_id = 'ben_greenberg';
+    const user_id = 'nutty_professor';
     const response = await fetch(`${API_BASE_URL}videos?user_id=${user_id}`);
     const responseJson = await response.json();
 
@@ -47,6 +48,24 @@ export async function getVideo(id: string): Promise<VideoProps> {
     const response = await fetch(`${API_BASE_URL}videos/single?video_id=${id}`);
     const responseJson = await response.json();
     return transformVideo(responseJson.video);
+}
+
+export async function createVideo(title: string, description: string, videoUrl: string, author: string) {
+    const response = await fetch(`${API_BASE_URL}videos`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            title: title,
+            description: description,
+            video_url: videoUrl,
+            user_id: author,
+        })
+    });
+    if (!response.ok) {
+        throw new Error(`Failed to create video with title=${title}, description=${description}, videoUrl=${videoUrl}, author=${author}: ${response.statusText}`);
+    }
 }
 
 export async function getComments(videoId: string): Promise<CommentProps[]> {

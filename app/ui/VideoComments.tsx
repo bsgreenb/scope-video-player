@@ -13,12 +13,9 @@ type VideoCommentsProps = {
 };
 
 const VideoComments = ({ videoId, comments }: VideoCommentsProps) => {
-    // Note: NextJS vendors React so we have to use the version with useFormState instead of useActionState https://github.com/facebook/react/issues/29017
-    const [state, handleSubmit] = useFormState(submitComment, {});
-
     return (<>
          <div className="text-md font-semibold mb-2">Comments · {comments.length}</div>
-         <CommentForm videoId={videoId} onSubmit={handleSubmit} error={state.error} />
+         <CommentForm videoId={videoId} />
          {comments.map((comment) => (<Comment key={comment.id} {...comment} />))}
     </>);
 };
