@@ -51,6 +51,7 @@ export async function submitComment(_prevState: {error?: string}, formData: Form
 
     return createComment(videoId, content, author)
         .then(() => {
+            revalidatePath('/');
             revalidatePath(`/videos/${videoId}`);
             return {};
         })
