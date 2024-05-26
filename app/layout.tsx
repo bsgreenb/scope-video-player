@@ -6,8 +6,12 @@ import Header from "./ui/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://scope-video-player.vercel.app'),
   title: "LearnWell",
   description: "Watch and create educational videos",
+  openGraph: {
+    images: '/logo.png',
+  },
 };
 
 export default function RootLayout({

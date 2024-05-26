@@ -24,7 +24,7 @@ const VideoCard = ({video: {id, title, videoUrl, author, createdAt, numComments}
             </div>
             <div className="py-2">
                 <h3 className="font-bold text-lg">
-                    <Link href={`/videos/${id}`}>
+                    <Link href={`/videos/${id}`} className="hover:underline">
                         {title}
                     </Link>
                 </h3>
