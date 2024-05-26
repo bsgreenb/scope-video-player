@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
 
@@ -8,7 +8,15 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex-1 flex">
                     <Link href="/">
-                        <Image src="/logo.png" alt="LearnWell Logo" width={175} height={87} />
+                        <Image
+                            src="/logo.png"
+                            alt="LearnWell Logo"
+                            width={175}
+                            height={87}
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </Link>
                 </div>
                 <div className="flex items-center space-x-4">

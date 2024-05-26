@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import { VideoProps } from '../lib/definitions';
@@ -15,10 +15,11 @@ const VideoCard = ({video: {id, title, videoUrl, author, createdAt, numComments}
                         <Image
                             src={getThumbnailUrl(videoUrl)}
                             alt={title}
-                            layout="fill"
-                            objectFit="cover"
                             className="rounded-lg"
-                        />
+                            fill
+                            style={{
+                                objectFit: "cover"
+                            }} />
                     </Link>
                 </div>
             </div>
