@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import { VideoProps } from '../lib/definitions';
