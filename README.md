@@ -1,5 +1,7 @@
 This is a Next.js project, hosted on Vercel.
 
+View it Live here: [https://scope-video-player.vercel.app/]
+
 ## Solution Overview
 
 We build the entire website statically, pulling videos and comments from FastAPI.  
