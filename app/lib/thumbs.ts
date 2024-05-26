@@ -15,5 +15,9 @@ const thumbs = {
 };
 
 export const getThumbnailUrl = (videoUrl: string) => {
-    return thumbs[videoUrl as keyof typeof thumbs];
+    if (videoUrl in thumbs) {
+        return thumbs[videoUrl as keyof typeof thumbs];
+    } else {
+        return 'https://placehold.co/320x180/png';
+    }
 }
