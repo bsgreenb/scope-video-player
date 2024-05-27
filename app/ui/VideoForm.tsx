@@ -35,6 +35,7 @@ const VideoForm = () => {
             <div className="mb-3">
                 <label className="text-gray-700 mb-1 block" htmlFor="videoUrl">URL (must be an MP4)</label>
                 <input 
+                    required
                     id="videoUrl" 
                     name="videoUrl" 
                     type="url" 
